@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* 1. Variables en modo oscuro por defecto */
+:root {
+  --bg-page: #0b0e14;
+  --bg-surface: #171c26;
+  --border: #232a37;
+  --text-primary: #e6e9ef;
+  --text-secondary: #8b93a3;
+  --accent: #e2734a;
+  --success: #5ec98f;
+  
+}
+
+html, body {
+  font-family: var(--font-sans);
+}
+
+html, body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  overscroll-behavior: smooth;
+}
+
+/* 2. Modo claro cuando se active */
+:root[data-theme="light"] {
+  --bg-page: #faf7f3;
+  --bg-surface: #f1ebe3;
+  --border: #e3dbd0;
+  --text-primary: #1c1a17;
+  --text-secondary: #6b6459;
+  --accent: #c85a35;
+  --success: #2f8f5b;
+}
+
+/* 3. Conexión con Tailwind v4 */
+@theme {
+  --color-page: var(--bg-page);
+  --color-surface: var(--bg-surface);
+  --color-border: var(--border);
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-accent: var(--accent);
+  --color-success: var(--success);
+
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
