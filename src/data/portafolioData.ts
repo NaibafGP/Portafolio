@@ -3,7 +3,7 @@ import type { PersonalInfo, Project, SkillCategory, Education, Experience} from 
 export const personalInfo: PersonalInfo = {
     name: "Fabian Garcia",
     title: "FullStack Developer",
-    summary: "I am a passionate frontend developer with experience in building responsive and user-friendly web applications. I enjoy working with modern web technologies and continuously learning to improve my skills.",
+    summary: "Desarrollador de software enfocado en construir aplicaciones robustas, limpias y bien estructuradas. Cuento con experiencia en el backend con Java y Spring Boot (arquitectura en capas, APIs REST y control transaccional) y en mobile con Kotlin y Jetpack Compose. Actualmente integro este conocimiento con React y TypeScript para crear soluciones Full-Stack modernas y de alto rendimiento. Apasionado por las buenas prácticas y la resolución de problemas reales.",
     email: "fgp2324@gmail.com",
     phone: "+51 933 513 253",
     github: "https://github.com/NaibafGP",
@@ -17,7 +17,7 @@ export const projects: Project[] = [{
     description: "App Móvil de la Wiki de Plantas vs Zombies, desarrollada con Kotlin y Jetpack Compose, utilizando una API REST creada desde cero para obtener la informacion de la base de datos en tiempo real",
     tags: ["Kotlin", "Jetpack Compose", "StateFlow", "MySQL", "MVVM"],
     highlights: ["Highlight 1", "Highlight 2"],
-    githubLink: "https://github.com/NaibafGP/Pvz-Wiki"
+    githubLink: "https://github.com/NaibafGP/PvzWiki"
 },
     {
     id: "1",
@@ -71,7 +71,7 @@ export const education: Education[] = [
         institution: "Instituto San Ignacio de Loyola",
         degree: "Desarrollo de Sistemas de la Información",
         period: "2023 - 2026",
-        certifications: ["Tecnologías de Desarrollo de Software", "· Análisis y Diseño de Sistemas de Información", "Despliegue y Calidad de Sistemas de Información"]
+        certifications: ["Tecnologías de Desarrollo de Software", "Análisis y Diseño de Sistemas de Información", "Despliegue y Calidad de Sistemas de Información",  "EF SET English Certificate — B2 (Upper Intermediate)"]
     }
 ]
 
