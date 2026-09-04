@@ -1,6 +1,6 @@
 import { personalInfo } from '../data/portafolioData';
-import { Mail, ArrowDown, Moon, Sun } from 'lucide-react';
-import { SiGithub } from 'react-icons/si';
+// import { Mail, ArrowDown, Moon, Sun } from 'lucide-react';
+// import { SiGithub } from 'react-icons/si';
 import { SiKotlin, SiSpringboot, SiMysql, SiDotnet, SiReact, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import profilePic from '../assets/profile.png';
 

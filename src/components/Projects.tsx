@@ -1,6 +1,6 @@
 import { projects } from '../data/portafolioData';
 import { SiGithub } from 'react-icons/si';
-import { ExternalLink } from 'lucide-react';
+// import { ExternalLink } from 'lucide-react';
 
 export default function Projects() {
   return (
