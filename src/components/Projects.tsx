@@ -3,7 +3,7 @@ import { SiGithub } from 'react-icons/si';
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-4 max-w-6xl mx-auto">
+    <section id="projects" className="py-24 px-4 max-w-6xl mx-auto scroll-mt-20">
       <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-16 text-primary">Proyectos Destacados</h2> 
       <div className="flex flex-col gap-20">
         {projects.map((project, index) => {
