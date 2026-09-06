@@ -33,13 +33,13 @@ export default function Projects() {
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2.5 py-1 text-xs rounded-md bg-surface border border-border text-secondary font-mono"
-                    >
-                      {tag}
+                <div className="flex flex-wrap items-center gap-x-2 text-xs font-mono text-secondary mb-6">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span key={tag} className="inline-flex items-center gap-2">
+                      <span>{tag}</span>
+                      {tagIndex < project.tags.length - 1 && (
+                        <span className="text-secondary/40 select-none">·</span>
+                      )}
                     </span>
                   ))}
                 </div>
@@ -47,7 +47,8 @@ export default function Projects() {
                 <a
                   href={project.githubLink}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
+                  aria-label={`Ver código de ${project.title} en GitHub`}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-border hover:border-accent hover:text-accent transition-all text-sm font-medium"
                 >
                   <SiGithub className="w-4 h-4" />

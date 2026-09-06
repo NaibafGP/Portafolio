@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { personalInfo, education } from "../data/portafolioData";
+import { personalInfo, education, experiences } from "../data/portafolioData";
 import profilePic from "../assets/profile.png";
-import { User, GraduationCap, Award } from "lucide-react";
+import { User, Briefcase, GraduationCap, Award } from "lucide-react";
 
 export default function About() {
-    const [activeTab, setActiveTab] = useState<"about" | "education" | "certifications">("about");
+    const [activeTab, setActiveTab] = useState<"about" | "experience" | "education" | "certifications">("about");
 
     return (
   <section id="about" className="py-24 px-4 max-w-6xl mx-auto scroll-mt-20">
@@ -13,7 +13,7 @@ export default function About() {
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
       <div className="flex flex-col items-start text-left">
-        <div className="flex gap-4 border-b border-border w-full pb-2 mb-6">
+        <div className="flex flex-wrap gap-4 border-b border-border w-full pb-2 mb-6">
           <button
             onClick={() => setActiveTab('about')}
             className={`pb-2 text-sm font-medium transition-colors cursor-pointer flex items-center gap-2 ${
@@ -24,6 +24,18 @@ export default function About() {
           >
             <User className="w-4 h-4" />
             <span>Sobre mí</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('experience')}
+            className={`pb-2 text-sm font-medium transition-colors cursor-pointer flex items-center gap-2 ${
+              activeTab === 'experience'
+                ? 'text-accent border-b-2 border-accent'
+                : 'text-secondary hover:text-primary'
+            }`}
+          >
+            <Briefcase className="w-4 h-4" />
+            <span>Experiencia</span>
           </button>
 
           <button
@@ -59,6 +71,30 @@ export default function About() {
             }`}
           >
             <p>{personalInfo.summary}</p>
+          </div>
+
+          <div
+            className={`[grid-area:1/1] transition-opacity duration-200 ${
+              activeTab === 'experience' ? 'opacity-100' : 'opacity-0 invisible pointer-events-none'
+            }`}
+          >
+            {experiences.map((exp) => (
+              <div key={exp.company} className="mb-4">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
+                  <h4 className="text-primary font-bold text-xl">{exp.company}</h4>
+                  <span className="text-xs font-mono text-secondary">{exp.period}</span>
+                </div>
+                <p className="text-accent text-sm font-mono mb-3">{exp.role}</p>
+                <ul className="space-y-1.5 text-sm text-secondary">
+                  {exp.description.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="text-accent select-none mt-0.5">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
           <div

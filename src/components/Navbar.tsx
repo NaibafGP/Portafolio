@@ -15,7 +15,7 @@ export default function Navbar() {
         <ul className="flex justify-center space-x-6">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              <NavLink href={link.href}>{link.label}</NavLink>
+              <NavItem href={link.href}>{link.label}</NavItem>
             </li>
           ))}
         </ul>
@@ -35,7 +35,7 @@ export default function Navbar() {
   );
 }
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+function NavItem({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <a
       href={href}

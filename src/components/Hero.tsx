@@ -32,7 +32,7 @@ export default function Hero() {
                 <div 
                   key={tech.name}
                   title={tech.name}
-                  className="p-2.5 rounded-xl bg-surface border border-border text-secondary hover:text-accent hover:border-accent/40 hover:scale-110 transition-all duration-200 cursor-pointer shadow-sm"
+                  className="p-2.5 rounded-xl bg-surface border border-border text-secondary shadow-sm select-none cursor-default"
                 >
                   <IconComponent className="w-5 h-5" />
                 </div>

@@ -16,7 +16,7 @@ export default function Footer() {
             {personalInfo.name}
           </span>
           <p className="text-secondary text-sm mt-1">
-            {personalInfo.title} · Soluciones Full-Stack
+            {personalInfo.title}
           </p>
           <p className="text-xs text-secondary/60 font-mono mt-4">
             © {currentYear} {personalInfo.name}. Construido con React, TypeScript y Tailwind CSS.
@@ -30,9 +30,10 @@ export default function Footer() {
             <a
               href="https://wa.me/51933513253"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-secondary hover:text-accent transition-colors font-mono group"
               title="Escribir por WhatsApp"
+              aria-label="Escribir por WhatsApp"
             >
               <Phone className="w-4 h-4 text-accent group-hover:scale-110 transition-transform" />
               <span>{personalInfo.phone}</span>
@@ -43,6 +44,7 @@ export default function Footer() {
               href={`mailto:${personalInfo.email}`}
               className="flex items-center gap-2 text-sm text-secondary hover:text-accent transition-colors font-mono group"
               title="Enviar correo electrónico"
+              aria-label="Enviar correo electrónico"
             >
               <Mail className="w-4 h-4 text-accent group-hover:scale-110 transition-transform" />
               <span>{personalInfo.email}</span>
@@ -54,9 +56,10 @@ export default function Footer() {
             <a
               href={personalInfo.github}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="w-9 h-9 rounded-lg bg-surface border border-border flex items-center justify-center text-secondary hover:text-accent hover:border-accent/40 hover:scale-105 transition-all shadow-sm"
               title="GitHub"
+              aria-label="Perfil de GitHub"
             >
               <SiGithub className="w-4 h-4" />
             </a>
@@ -64,9 +67,10 @@ export default function Footer() {
             <a
               href={personalInfo.linkedin}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="w-9 h-9 rounded-lg bg-surface border border-border flex items-center justify-center text-secondary hover:text-accent hover:border-accent/40 hover:scale-105 transition-all shadow-sm"
               title="LinkedIn"
+              aria-label="Perfil de LinkedIn"
             >
               <FaLinkedin className="w-4 h-4" />
             </a>

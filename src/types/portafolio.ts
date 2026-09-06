@@ -1,3 +1,5 @@
+import type { IconType } from 'react-icons';
+
 export interface PersonalInfo {
   name: string;
   title: string;
@@ -15,16 +17,21 @@ export interface Project {
   title: string;
   description: string;
   tags: string[];
-  highlights: string[];
   githubLink: string;
   liveDemo?: string;
   image?: string;
 }
 
-export interface SkillCategory {
+export interface SkillItem {
+  name: string;
+  icon: IconType;
+  color: string;
+}
+
+export interface SkillCategoryGroup {
   category: string;
-  skills: string[];
-  icon?: string;
+  description: string;
+  skills: SkillItem[];
 }
 
 export interface Experience {

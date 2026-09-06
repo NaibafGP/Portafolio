@@ -9,10 +9,12 @@ function App() {
   return (
     <div className="min-h-screen bg-page text-primary flex flex-col">
       <Navbar /> 
-      <Hero />
-      <Projects />
-      <Skills />
-      <About />
+      <main className="flex-1">
+        <Hero />
+        <Projects />
+        <Skills />
+        <About />
+      </main>
       <Footer />
     </div>
   )
