@@ -1,4 +1,4 @@
-export type PersonalInfo = {
+export interface PersonalInfo {
   name: string;
   title: string;
   summary: string;
@@ -6,34 +6,39 @@ export type PersonalInfo = {
   phone: string;
   github: string;
   linkedin: string;
-  availebleForHire: boolean;
-};
+  availableForHire: boolean;
+  location?: string;
+}
 
-export type Project = {
+export interface Project {
   id: string;
   title: string;
   description: string;
   tags: string[];
   highlights: string[];
   githubLink: string;
-  liveLink?: string;
-};
-
-export type SkillCategory = {
-    category: string;
-    skills: string[];
+  liveDemo?: string;
+  image?: string;
 }
 
-export type Experience = {
-    company: string;
-    role: string;
-    period: string;
-    description: string[];
+export interface SkillCategory {
+  category: string;
+  skills: string[];
+  icon?: string;
 }
 
-export type Education = {
-    institution: string;
-    degree: string;
-    period: string;
-    certifications: string[];
+export interface Experience {
+  company: string;
+  role: string;
+  period: string;
+  description: string[];
+  technologies?: string[];
+}
+
+export interface Education {
+  institution: string;
+  degree: string;
+  period: string;
+  certifications: string[];
+  achievements?: string[];
 }

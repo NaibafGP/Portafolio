@@ -8,7 +8,7 @@ export const personalInfo: PersonalInfo = {
     phone: "+51 933 513 253",
     github: "https://github.com/NaibafGP",
     linkedin: "https://www.linkedin.com/in/fgp2324/",
-    availebleForHire: true
+    availableForHire: true
 }
 
 export const projects: Project[] = [{

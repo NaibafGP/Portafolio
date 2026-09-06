@@ -1,6 +1,7 @@
 import { personalInfo } from '../data/portafolioData';
 import { SiKotlin, SiSpringboot, SiMysql, SiDotnet, SiReact, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import profilePic from '../assets/profile.png';
+import { ArrowDown } from 'lucide-react';
 
 const techStack = [
   { name: 'Kotlin', icon: SiKotlin },
@@ -38,6 +39,15 @@ export default function Hero() {
               );
             })}
           </div>
+
+          <a
+            href="#projects"
+            className="inline-flex items-center gap-2 text-xs font-mono text-secondary hover:text-accent transition-colors group mt-4"
+            aria-label="Explorar proyectos"
+          >
+            <span className="tracking-wider uppercase">Explorar Proyectos</span>
+            <ArrowDown className="w-4 h-4 text-accent animate-bounce" />
+          </a>
         </div>
 
         <div className="flex justify-center md:justify-end items-center">
@@ -48,6 +58,8 @@ export default function Hero() {
           />
         </div>
       </div>
+
+    
     </section>
   );
 }

@@ -7,7 +7,7 @@ export default function About() {
     const [activeTab, setActiveTab] = useState<"about" | "education" | "certifications">("about");
 
     return (
-  <section id="about" className="py-24 px-4 max-w-6xl mx-auto">
+  <section id="about" className="py-24 px-4 max-w-6xl mx-auto scroll-mt-20">
     <span className="text-accent font-mono text-sm tracking-wider uppercase">// Conóceme</span>
     <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-12 text-primary">Sobre Mí</h2>
 
