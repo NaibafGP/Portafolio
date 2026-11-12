@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { User, Briefcase, GraduationCap, Award, Server, Database } from 'lucide-react';
+import { User, GraduationCap, Award, Server, Database } from 'lucide-react';
 import profilePic from '../assets/profile.png';
 import { useLanguage } from '../context/languageContext';
 import { portfolioByLang, uiLabels } from '../data/portafolioData';
 
 export default function About() {
-  const [activeTab, setActiveTab] = useState<'about' | 'experience' | 'education' | 'certifications'>('about');
+  const [activeTab, setActiveTab] = useState<'about' | 'education' | 'certifications'>('about');
   const { lang } = useLanguage();
-  const { personalInfo, experiences, education } = portfolioByLang[lang];
+  const { personalInfo, education } = portfolioByLang[lang];
   const labels = uiLabels[lang].about;
 
   return (
@@ -29,19 +29,6 @@ export default function About() {
             >
               <User className="w-4 h-4" />
               <span>{labels.tabs.about}</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setActiveTab('experience')}
-              className={`pb-2 text-sm font-medium transition-colors cursor-pointer flex items-center gap-2 ${
-                activeTab === 'experience'
-                  ? 'text-accent border-b-2 border-accent'
-                  : 'text-secondary hover:text-primary'
-              }`}
-            >
-              <Briefcase className="w-4 h-4" />
-              <span>{labels.tabs.experience}</span>
             </button>
 
             <button
@@ -79,44 +66,6 @@ export default function About() {
               }`}
             >
               <p>{personalInfo.summary}</p>
-            </div>
-
-            <div
-              className={`[grid-area:1/1] transition-opacity duration-200 space-y-6 ${
-                activeTab === 'experience'
-                  ? 'opacity-100'
-                  : 'opacity-0 invisible pointer-events-none'
-              }`}
-            >
-              {experiences.map((exp) => (
-                <div key={exp.company} className="pb-5 border-b border-border/60 last:border-b-0 last:pb-0">
-                  <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
-                    <h4 className="text-primary font-bold text-xl">{exp.company}</h4>
-                    <span className="text-xs font-mono text-secondary">{exp.period}</span>
-                  </div>
-                  <p className="text-accent text-sm font-mono mb-3">{exp.role}</p>
-                  <ul className="space-y-1.5 text-sm text-secondary mb-3">
-                    {exp.description.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <span className="text-accent select-none mt-0.5">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {exp.technologies && exp.technologies.length > 0 && (
-                    <div className="flex flex-wrap gap-1.5 mt-2">
-                      {exp.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2 py-0.5 rounded-md bg-surface border border-border text-[11px] font-mono text-secondary"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
             </div>
 
             <div

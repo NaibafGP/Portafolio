@@ -6,9 +6,10 @@ import {
   SiTypescript,
   SiPython,
   SiOdoo,
+  SiGithub,
 } from 'react-icons/si';
-import { FaJava } from 'react-icons/fa6';
-import { ArrowDown, MapPin } from 'lucide-react';
+import { FaJava, FaLinkedin } from 'react-icons/fa6';
+import { ArrowDown, MapPin, Mail } from 'lucide-react';
 import profilePic from '../assets/profile.png';
 import { useLanguage } from '../context/languageContext';
 import { portfolioByLang, uiLabels } from '../data/portafolioData';
@@ -70,14 +71,49 @@ export default function Hero() {
             })}
           </div>
 
-          <a
-            href="#projects"
-            className="inline-flex items-center gap-2 text-xs font-mono text-secondary hover:text-accent transition-colors group mt-4"
-            aria-label={labels.explore}
-          >
-            <span className="tracking-wider uppercase">{labels.explore}</span>
-            <ArrowDown className="w-4 h-4 text-accent animate-bounce" />
-          </a>
+          <div className="flex flex-wrap items-center gap-4 mt-4">
+            <a
+              href="#experience"
+              className="inline-flex items-center gap-2 text-xs font-mono text-secondary hover:text-accent transition-colors group"
+              aria-label={labels.explore}
+            >
+              <span className="tracking-wider uppercase">{labels.explore}</span>
+              <ArrowDown className="w-4 h-4 text-accent animate-bounce" />
+            </a>
+
+            <span className="h-4 w-px bg-border hidden sm:inline-block" aria-hidden="true" />
+
+            <div className="flex items-center gap-2.5">
+              <a
+                href={personalInfo.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub"
+                aria-label="GitHub"
+                className="w-9 h-9 rounded-lg bg-surface border border-border flex items-center justify-center text-secondary hover:text-accent hover:border-accent/40 transition-colors shadow-sm"
+              >
+                <SiGithub className="w-4 h-4" />
+              </a>
+              <a
+                href={personalInfo.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LinkedIn"
+                aria-label="LinkedIn"
+                className="w-9 h-9 rounded-lg bg-surface border border-border flex items-center justify-center text-secondary hover:text-accent hover:border-accent/40 transition-colors shadow-sm"
+              >
+                <FaLinkedin className="w-4 h-4" />
+              </a>
+              <a
+                href={`mailto:${personalInfo.email}`}
+                title={labels.emailTitle}
+                aria-label={labels.emailTitle}
+                className="w-9 h-9 rounded-lg bg-surface border border-border flex items-center justify-center text-secondary hover:text-accent hover:border-accent/40 transition-colors shadow-sm"
+              >
+                <Mail className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className="flex justify-center md:justify-end items-center">

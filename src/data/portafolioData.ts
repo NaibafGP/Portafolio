@@ -175,7 +175,14 @@ export const portfolioByLang: Record<Language, PortfolioContent> = {
 export const uiLabels: Record<
   Language,
   {
-    nav: { projects: string; skills: string; about: string; downloadCv: string; cvShort: string };
+    nav: {
+      experience: string;
+      projects: string;
+      skills: string;
+      about: string;
+      downloadCv: string;
+      cvShort: string;
+    };
     hero: {
       explore: string;
       status: string;
@@ -183,13 +190,19 @@ export const uiLabels: Record<
       roleLabel: string;
       englishLabel: string;
       focusLabel: string;
+      emailTitle: string;
+    };
+    experience: {
+      tagline: string;
+      heading: string;
+      currentBadge: string;
     };
     projects: { tagline: string; heading: string; viewGithub: string };
     skills: { tagline: string; heading: string };
     about: {
       tagline: string;
       heading: string;
-      tabs: { about: string; experience: string; education: string; certifications: string };
+      tabs: { about: string; education: string; certifications: string };
       badgeTitle: string;
       badgeSubtitle: string;
       highlights: { label: string; value: string }[];
@@ -199,6 +212,7 @@ export const uiLabels: Record<
 > = {
   es: {
     nav: {
+      experience: 'Experiencia',
       projects: 'Proyectos',
       skills: 'Habilidades',
       about: 'Sobre Mí',
@@ -212,6 +226,12 @@ export const uiLabels: Record<
       roleLabel: 'Backend & Odoo ERP',
       englishLabel: 'Inglés B2 (EF SET)',
       focusLabel: 'Java · Python · Odoo 20 · Kotlin',
+      emailTitle: 'Enviar correo electrónico',
+    },
+    experience: {
+      tagline: '// Trayectoria Profesional',
+      heading: 'Experiencia Laboral',
+      currentBadge: 'Actual',
     },
     projects: {
       tagline: '// Portafolio de Ingeniería',
@@ -227,7 +247,6 @@ export const uiLabels: Record<
       heading: 'Sobre Mí',
       tabs: {
         about: 'Sobre mí',
-        experience: 'Experiencia',
         education: 'Educación',
         certifications: 'Certificaciones',
       },
@@ -247,6 +266,7 @@ export const uiLabels: Record<
   },
   en: {
     nav: {
+      experience: 'Experience',
       projects: 'Projects',
       skills: 'Skills',
       about: 'About',
@@ -260,6 +280,12 @@ export const uiLabels: Record<
       roleLabel: 'Backend & Odoo ERP',
       englishLabel: 'English B2 (EF SET)',
       focusLabel: 'Java · Python · Odoo 20 · Kotlin',
+      emailTitle: 'Send an email',
+    },
+    experience: {
+      tagline: '// Work History',
+      heading: 'Work Experience',
+      currentBadge: 'Current',
     },
     projects: {
       tagline: '// Engineering Portfolio',
@@ -275,7 +301,6 @@ export const uiLabels: Record<
       heading: 'About Me',
       tabs: {
         about: 'About me',
-        experience: 'Experience',
         education: 'Education',
         certifications: 'Certifications',
       },
