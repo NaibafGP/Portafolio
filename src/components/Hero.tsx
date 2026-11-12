@@ -8,7 +8,8 @@ import {
   SiOdoo,
 } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa6';
-import { ArrowDown, Terminal, MapPin, Globe } from 'lucide-react';
+import { ArrowDown, MapPin } from 'lucide-react';
+import profilePic from '../assets/profile.png';
 import { useLanguage } from '../context/languageContext';
 import { portfolioByLang, uiLabels } from '../data/portafolioData';
 
@@ -33,9 +34,17 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="flex flex-col items-start text-left">
           {personalInfo.availableForHire && (
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border text-xs font-mono text-secondary mb-5">
-              <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
-              <span>{labels.status}</span>
+            <div className="inline-flex flex-wrap items-center gap-3 mb-5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border text-xs font-mono text-secondary">
+                <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
+                <span>{labels.status}</span>
+              </div>
+              {personalInfo.location && (
+                <div className="inline-flex items-center gap-1.5 text-xs font-mono text-secondary">
+                  <MapPin className="w-3.5 h-3.5 text-accent" />
+                  <span>{personalInfo.location}</span>
+                </div>
+              )}
             </div>
           )}
 
@@ -71,60 +80,12 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Developer Terminal Card */}
         <div className="flex justify-center md:justify-end items-center">
-          <div className="w-full max-w-md rounded-2xl bg-surface border border-border shadow-2xl shadow-accent/5 overflow-hidden">
-            <div className="flex items-center justify-between px-4 py-3 bg-page/60 border-b border-border">
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
-                <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
-                <span className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
-              </div>
-              <div className="flex items-center gap-1.5 text-xs font-mono text-secondary">
-                <Terminal className="w-3.5 h-3.5 text-accent" />
-                <span>{labels.terminalFile}</span>
-              </div>
-            </div>
-
-            <div className="p-5 sm:p-6 font-mono text-xs sm:text-sm leading-relaxed space-y-2">
-              <p className="text-secondary">
-                <span className="text-accent">class</span>{' '}
-                <span className="text-primary font-semibold">DeveloperProfile</span>:
-              </p>
-              <div className="pl-4 space-y-1.5 border-l border-border/80">
-                <p>
-                  <span className="text-secondary">role</span> ={' '}
-                  <span className="text-success">&quot;{labels.roleLabel}&quot;</span>
-                </p>
-                <p>
-                  <span className="text-secondary">current_work</span> ={' '}
-                  <span className="text-success">&quot;Cisclon S.A.C. (Odoo 20)&quot;</span>
-                </p>
-                <p>
-                  <span className="text-secondary">stack</span> = [
-                  <span className="text-primary">&quot;Java&quot;</span>,{' '}
-                  <span className="text-primary">&quot;Python&quot;</span>,{' '}
-                  <span className="text-primary">&quot;Odoo&quot;</span>,{' '}
-                  <span className="text-primary">&quot;Kotlin&quot;</span>]
-                </p>
-                <p>
-                  <span className="text-secondary">english</span> ={' '}
-                  <span className="text-success">&quot;{labels.englishLabel}&quot;</span>
-                </p>
-              </div>
-
-              <div className="pt-4 mt-4 border-t border-border flex flex-wrap items-center justify-between gap-2 text-xs text-secondary">
-                <span className="inline-flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-accent" />
-                  <span>{personalInfo.location}</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <Globe className="w-3.5 h-3.5 text-accent" />
-                  <span>{labels.focusLabel}</span>
-                </span>
-              </div>
-            </div>
-          </div>
+          <img
+            src={profilePic}
+            alt={personalInfo.name}
+            className="rounded-full w-60 h-60 md:w-72 md:h-72 object-cover bg-surface border-2 border-accent shadow-2xl shadow-accent/10"
+          />
         </div>
       </div>
     </section>

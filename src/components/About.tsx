@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { User, Briefcase, GraduationCap, Award, Code2, Server, Database } from 'lucide-react';
+import { User, Briefcase, GraduationCap, Award, Server, Database } from 'lucide-react';
+import profilePic from '../assets/profile.png';
 import { useLanguage } from '../context/languageContext';
 import { portfolioByLang, uiLabels } from '../data/portafolioData';
 
@@ -153,13 +154,15 @@ export default function About() {
           </div>
         </div>
 
-        {/* Tarjeta profesional de icono/ingeniería */}
+        {/* Tarjeta profesional con avatar */}
         <div className="flex justify-center md:justify-end">
           <div className="w-full max-w-sm rounded-2xl bg-surface border border-border p-6 shadow-2xl shadow-accent/5">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 rounded-2xl bg-page border border-accent/40 flex items-center justify-center shrink-0">
-                <Code2 className="w-7 h-7 text-accent" />
-              </div>
+              <img
+                src={profilePic}
+                alt={personalInfo.name}
+                className="w-14 h-14 rounded-2xl object-cover bg-page border border-accent/40 shrink-0"
+              />
               <div>
                 <h3 className="text-lg font-bold text-primary">{labels.badgeTitle}</h3>
                 <p className="text-xs text-secondary mt-0.5">{labels.badgeSubtitle}</p>
