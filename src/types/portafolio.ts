@@ -1,4 +1,6 @@
-import type { IconType } from 'react-icons';
+import type { ComponentType, CSSProperties } from 'react';
+
+export type Language = 'es' | 'en';
 
 export interface PersonalInfo {
   name: string;
@@ -20,11 +22,12 @@ export interface Project {
   githubLink: string;
   liveDemo?: string;
   image?: string;
+  previewType?: 'api' | 'mobile' | 'desktop';
 }
 
 export interface SkillItem {
   name: string;
-  icon: IconType;
+  icon: ComponentType<{ className?: string; style?: CSSProperties }>;
   color: string;
 }
 

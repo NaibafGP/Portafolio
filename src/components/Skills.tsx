@@ -1,12 +1,20 @@
-import { skillsCategories } from '../data/skillsData';
+import { useLanguage } from '../context/languageContext';
+import { uiLabels } from '../data/portafolioData';
+import { getSkillsCategories } from '../data/skillsData';
 
 export default function Skills() {
+  const { lang } = useLanguage();
+  const labels = uiLabels[lang].skills;
+  const skillsCategories = getSkillsCategories(lang);
+
   return (
     <section id="skills" className="py-24 px-4 max-w-6xl mx-auto scroll-mt-20">
       {/* Cabecera */}
       <div className="mb-12">
-        <span className="text-accent font-mono text-sm tracking-wider uppercase">// Arsenal Técnico</span>
-        <h2 className="text-3xl md:text-4xl font-bold mt-2 text-primary">Habilidades Técnicas</h2>
+        <span className="text-accent font-mono text-sm tracking-wider uppercase">
+          {labels.tagline}
+        </span>
+        <h2 className="text-3xl md:text-4xl font-bold mt-2 text-primary">{labels.heading}</h2>
       </div>
 
       {/* Cuadrícula de 4 Columnas */}
@@ -32,9 +40,7 @@ export default function Skills() {
                       className="flex items-center gap-3 group"
                       title={skill.name}
                     >
-                      <span 
-                        className="w-8 h-8 rounded-lg bg-page border border-border flex items-center justify-center transition-transform group-hover:scale-110"
-                      >
+                      <span className="w-8 h-8 rounded-lg bg-page border border-border flex items-center justify-center transition-transform group-hover:scale-110">
                         <Icon className="w-4 h-4" style={{ color: skill.color }} />
                       </span>
                       <span className="text-sm font-medium text-primary group-hover:text-accent transition-colors">
