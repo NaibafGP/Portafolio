@@ -11,7 +11,7 @@ export default function Skills() {
     <section id="skills" className="py-24 px-4 max-w-6xl mx-auto scroll-mt-20">
       {/* Cabecera */}
       <div className="mb-12">
-        <span className="text-accent font-mono text-sm tracking-wider uppercase">
+        <span className="text-accent font-sans text-xs font-semibold tracking-wider uppercase">
           {labels.tagline}
         </span>
         <h2 className="text-3xl md:text-4xl font-bold mt-2 text-primary">{labels.heading}</h2>
@@ -27,7 +27,7 @@ export default function Skills() {
             <div>
               <div className="border-b border-border pb-4 mb-5">
                 <h3 className="text-xl font-bold text-primary">{group.category}</h3>
-                <p className="text-xs font-mono text-secondary mt-1">{group.description}</p>
+                <p className="text-xs font-sans text-secondary mt-1">{group.description}</p>
               </div>
 
               <ul className="space-y-4">
@@ -40,8 +40,12 @@ export default function Skills() {
                       className="flex items-center gap-3 group"
                       title={skill.name}
                     >
-                      <span className="w-8 h-8 rounded-lg bg-page border border-border flex items-center justify-center transition-transform group-hover:scale-110">
-                        <Icon className="w-4 h-4" style={{ color: skill.color }} />
+                      <span
+                        title={skill.name}
+                        aria-label={skill.name}
+                        className="w-8 h-8 rounded-lg bg-page border border-border flex items-center justify-center transition-all duration-200 group-hover:border-accent/40 group-hover:bg-surface group-hover:scale-105 shrink-0"
+                      >
+                        <Icon className="w-4 h-4 text-secondary group-hover:text-accent transition-colors" />
                       </span>
                       <span className="text-sm font-medium text-primary group-hover:text-accent transition-colors">
                         {skill.name}

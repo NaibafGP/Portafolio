@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -7,11 +7,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Synchronous language & theme hydration to eliminate FOUC / attribute flicker -->
+    <script>
+      (function() {
+        try {
+          var p = new URLSearchParams(window.location.search).get('lang');
+          var s = localStorage.getItem('portfolio-lang');
+          var l = (p === 'es' || p === 'en') ? p : ((s === 'es' || s === 'en') ? s : 'es');
+          document.documentElement.lang = l;
+          var t = localStorage.getItem('portfolio-theme');
+          if (t === 'light' || t === 'dark') {
+            document.documentElement.setAttribute('data-theme', t);
+          }
+        } catch (e) {}
+      })();
+    </script>
+
     <meta
       name="description"
-      content="Fabian Garcia — Backend, Odoo (Python) & Mobile Developer. Java, Spring Boot, Odoo 20, Kotlin, PostgreSQL."
+      content="Fabian Garcia — Desarrollador de Software especializado en Backend (Java / Spring Boot, Python / Odoo) y Mobile (Kotlin / Jetpack Compose). Lima, Perú."
     />
-    <title>Fabian Garcia — Backend, Odoo & Mobile Developer</title>
+    <title>Fabian Garcia — Desarrollador de Software | Backend & Mobile</title>
   </head>
   <body>
     <div id="root"></div>

@@ -1,15 +1,18 @@
 @import "tailwindcss";
 
-/* 1. Variables en modo oscuro por defecto */
+/* 1. Calm Dark Palette (Default) */
 :root {
-  --bg-page: #0b0e14;
-  --bg-surface: #171c26;
-  --border: #232a37;
-  --text-primary: #e6e9ef;
-  --text-secondary: #8b93a3;
-  --accent: #e2734a;
-  --success: #5ec98f;
-  
+  --bg-page: #0B0F17;
+  --bg-surface: #131924;
+  --bg-elevated: #1A2333;
+  --border: #222D3E;
+  --border-hover: #334155;
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --accent: #E06941;
+  --accent-hover: #F07E56;
+  --success: #10B981;
 }
 
 html {
@@ -19,30 +22,38 @@ html {
 html, body {
   background-color: var(--bg-page);
   color: var(--text-primary);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* 2. Modo claro cuando se active */
+/* 2. Light Mode Palette (Prepared for M3 Theme Switcher) */
 :root[data-theme="light"] {
   --bg-page: #faf7f3;
   --bg-surface: #f1ebe3;
+  --bg-elevated: #f1f5f9;
   --border: #e3dbd0;
+  --border-hover: #cbd5e1;
   --text-primary: #1c1a17;
   --text-secondary: #6b6459;
+  --text-muted: #94a3b8;
   --accent: #c85a35;
+  --accent-hover: #ea580c;
   --success: #2f8f5b;
 }
 
-/* 3. Conexión con Tailwind v4 */
+/* 3. Tailwind CSS v4 Theme Integration */
 @theme {
   --color-page: var(--bg-page);
   --color-surface: var(--bg-surface);
+  --color-elevated: var(--bg-elevated);
   --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
   --color-primary: var(--text-primary);
   --color-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
   --color-success: var(--success);
 
-  --font-sans: 'Inter', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
